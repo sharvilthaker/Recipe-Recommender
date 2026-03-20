@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Recommender</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Recipe Recommender</h1>
+        <p>Enter ingredients you have and we'll suggest recipes for you.</p>
+    </header>
+    <main>
+
+        <form id="SearchF" aria-label="Recipe search form">
+            <div class="Group">
+                <label for="ingredients">Ingredients (required)</label>
+                <input
+                    type="text"
+                    id="ingredients"
+                    placeholder="e.g. chicken, tomato, garlic"
+                    aria-required="true"
+                />
+                <small>Separate ingredients with commas.</small>
+                <span id="inError" class="errorMsg" hidden>
+                    Please enter at least one ingredient.
+                </span>
+            </div>
+
+            <div class="Group">
+                <label for="diet">Dietary Restriction</label>
+                <select id="diet">
+                    <option value="">No restriction</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="gluten free">Gluten Free</option>
+                    <option value="ketogenic">Ketogenic</option>
+                    <option value="paleo">Paleo</option>
+                    <option value="dairy free">Dairy Free</option>
+                </select>
+            </div>
+
+            <button type="submit" id="SearchBtn">Find Recipes</button>
+
+        </form>
+        <div id="AreaS" aria-live="polite"></div>
+
+        <section id="results-section" hidden>
+            <h2 id="results-heading"></h2>
+            <div id="results-grid"></div>
+        </section>
+    </main>
+    <footer>
+        <p>Powered by <a href="https://spoonacular.com/food-api" target="_blank" rel="noopener noreferrer">Spoonacular API</a>CSCI 3172 Lab 5</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
